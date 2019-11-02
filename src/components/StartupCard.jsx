@@ -4,13 +4,14 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import { CardMedia, CardActionArea } from '@material-ui/core';
+import { Link } from "react-router-dom";
 
 
 class StartupCard extends React.Component {
   render() {
     return (
       <Card>
-        <CardActionArea>
+        <CardActionArea component={Link} to={"/startup/" + this.props.segment_id}>
           <CardMedia
             component="img"
             height="140"
@@ -25,14 +26,15 @@ class StartupCard extends React.Component {
             </Typography>
           </CardContent>
         </CardActionArea>
-      </Card>);
+      </Card >);
   }
 };
 
 StartupCard.propTypes = {
   name: PropTypes.string,
   image: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
+  segment_id: PropTypes.string
 
 };
 
