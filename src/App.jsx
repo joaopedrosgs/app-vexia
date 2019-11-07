@@ -14,6 +14,7 @@ import {
   Box
 } from '@material-ui/core';
 import BottomMenu from './components/BottomMenu';
+import Startup from './routes/Startup';
 
 function App() {
   return (
@@ -22,19 +23,9 @@ function App() {
       <Box pt={3} pb={10}>
         <Container maxWidth="lg" >
           <Switch>
-            <Route path="/about" >
-              <StartupCard image="https://picsum.photos/200"
-                name="teste"
-                description="teste" > </StartupCard>
-            </Route>
-            <Route path="/users" >
-              <StartupCard image="https://picsum.photos/200"
-                name="teste"
-                description="teste" > </StartupCard>
-            </Route>
-            <Route path="/" >
-              < Home > </Home>
-            </Route>
+            <Route path="/ranking" component="Ranking" />
+            <Route path="/startup/:id" component={Startup} />
+            <Route path="/" component={Home} />
           </Switch>
         </Container>
       </Box>
